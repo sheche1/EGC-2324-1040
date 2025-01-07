@@ -162,7 +162,7 @@ STATIC_URL = '/static/'
 KEYBITS = 256
 
 # Versioning
-ALLOWED_VERSIONS = ['v1', 'v2','v3']
+ALLOWED_VERSIONS = ['v1', 'v2','v4']
 DEFAULT_VERSION = 'v1'
 
 try:
