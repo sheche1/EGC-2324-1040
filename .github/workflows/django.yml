@@ -1,6 +1,13 @@
 name: Python application
 
-on: [push]
+on:
+  push:
+    branches:
+      - egc_test
+  pull_request:
+    branches:
+      - egc_test
+
   
 
 jobs:
@@ -43,8 +50,3 @@ jobs:
         cd decide
         coverage run --branch --source=. ./manage.py test  --keepdb 
         coverage xml 
-    - name: Codacy Coverage Reporter
-      uses: codacy/codacy-coverage-reporter-action@v1
-      with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: decide/coverage.xml 
